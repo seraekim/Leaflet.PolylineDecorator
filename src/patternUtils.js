@@ -1,5 +1,5 @@
 
-const computeSegmentHeading = (a, b) =>
+export const computeSegmentHeading = (a, b) =>
     (Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI) + 90;
 
 const getPointPathPixelLength = pts =>
@@ -7,7 +7,7 @@ const getPointPathPixelLength = pts =>
         return i === 0 ? 0 : distance + pt.distanceTo(pts[i - 1]);
     }, 0);
 
-const asRatioToPathLength = ({ value, isInPixels }, totalPathLength) =>
+export const asRatioToPathLength = ({ value, isInPixels }, totalPathLength) =>
     isInPixels ? value / totalPathLength : value;
 
 function parseRelativeOrAbsoluteValue(value) {
